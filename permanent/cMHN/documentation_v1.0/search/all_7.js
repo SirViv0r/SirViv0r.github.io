@@ -6,5 +6,5 @@ var searchData=
   ['learn_5findependence_5fmodel_2ehpp_3',['learn_independence_model.hpp',['../learn__independence__model_8hpp.html',1,'']]],
   ['learn_5ftheta_2ehpp_4',['learn_theta.hpp',['../nontt_2learn__theta_8hpp.html',1,'(Global Namespace)'],['../tt_2learn__theta_8hpp.html',1,'(Global Namespace)']]],
   ['learnindependencemodel_5',['learnIndependenceModel',['../namespacecMHN.html#a9dc8f725c5d13c125f95098c062ed582',1,'cMHN']]],
-  ['learntheta_6',['learnTheta',['../namespacecMHN_1_1nonTT.html#a9bdf7d24e7e150abcaf4d505ca5956a5',1,'cMHN::nonTT::learnTheta()'],['../namespacecMHN_1_1TT.html#aef195589a7b2e3e1438cf6cfbfef6acf',1,'cMHN::TT::learnTheta()']]]
+  ['learntheta_6',['learnTheta',['../namespacecMHN_1_1nonTT.html#abdc687fdac08b516e75b66ed48630100',1,'cMHN::nonTT::learnTheta()'],['../namespacecMHN_1_1TT.html#a14a454adce3f6bb2c1a4b42f06c97aa2',1,'cMHN::TT::learnTheta()']]]
 ];

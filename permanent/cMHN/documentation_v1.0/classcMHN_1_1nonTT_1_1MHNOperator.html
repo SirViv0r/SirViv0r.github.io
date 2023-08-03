@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cMHN<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">cMHN<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">C++ library for learning MHNs with pRC</div>
   </td>
@@ -82,12 +82,12 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a12daa335ff2ccec85e963b9572da9864"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a12daa335ff2ccec85e963b9572da9864">Type</a> = <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></td></tr>
+<tr class="memitem:a12daa335ff2ccec85e963b9572da9864"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a12daa335ff2ccec85e963b9572da9864">Type</a> = <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></td></tr>
 <tr class="separator:a12daa335ff2ccec85e963b9572da9864"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a667ef02ff067c586735f1ef3a8d5dd12"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a667ef02ff067c586735f1ef3a8d5dd12">MHNOperator</a> (pRC::Tensor&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt; const &amp;<a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a3691af8bdcb4e87bb438f160be19b92d">theta</a>)</td></tr>
+<tr class="memitem:a667ef02ff067c586735f1ef3a8d5dd12"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a667ef02ff067c586735f1ef3a8d5dd12">MHNOperator</a> (pRC::Tensor&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt; const &amp;<a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a3691af8bdcb4e87bb438f160be19b92d">theta</a>)</td></tr>
 <tr class="separator:a667ef02ff067c586735f1ef3a8d5dd12"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3691af8bdcb4e87bb438f160be19b92d"><td class="memItemLeft" align="right" valign="top">constexpr auto &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html#a3691af8bdcb4e87bb438f160be19b92d">theta</a> (pRC::Index const i, pRC::Index const j) const</td></tr>
 <tr class="separator:a3691af8bdcb4e87bb438f160be19b92d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -97,7 +97,7 @@ Public Member Functions</h2></td></tr>
 <tr class="separator:a5347ecb70cbebb32dec7748bcc5cd058"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, pRC::Size D&gt;<br />
+<div class="textblock"><div class="compoundTemplParams">template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, pRC::Size D&gt;<br />
 class cMHN::nonTT::MHNOperator&lt; T, D &gt;</div><p >Class storing an MHN operator represented by a theta matrix (for non <a class="el" href="namespacecMHN_1_1TT.html">TT</a> calculations) </p>
 <p >The class internally stores the actual transition rate modifiers (usually denoted Theta), but is initialized from the logarithmic rate modifiers (usually denoted theta), their relation is Theta = exp(theta).</p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
@@ -114,10 +114,10 @@ class cMHN::nonTT::MHNOperator&lt; T, D &gt;</div><p >Class storing an MHN opera
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
+template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::Type =  <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></td>
+          <td class="memname">using <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::Type =  <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -131,15 +131,15 @@ template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
+template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::MHNOperator </td>
+          <td class="memname">constexpr <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::MHNOperator </td>
           <td>(</td>
-          <td class="paramtype">pRC::Tensor&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt; const &amp;&#160;</td>
+          <td class="paramtype">pRC::Tensor&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt; const &amp;&#160;</td>
           <td class="paramname"><em>theta</em></td><td>)</td>
           <td></td>
         </tr>
@@ -160,13 +160,13 @@ template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
+template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
+          <td class="memname">auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -187,13 +187,13 @@ template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
+template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
+          <td class="memname">constexpr auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td> const</td>
@@ -214,13 +214,13 @@ template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;class <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
+template&lt;class <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> , pRC::Size D&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">constexpr auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
+          <td class="memname">constexpr auto &amp; <a class="el" href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a>&lt; <a class="el" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <a class="el" href="ReadWriteTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> &gt;::theta </td>
           <td>(</td>
           <td class="paramtype">pRC::Index const&#160;</td>
           <td class="paramname"><em>i</em>, </td>

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['main_0',['main',['../sanitycheckcpp_8cc.html#a840291bc02cba5474a4cb46a9b9566fe',1,'main(void):&#160;sanitycheckcpp.cc'],['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main():&#160;main.cpp']]],
+  ['main_0',['main',['../main_8cpp.html#ae66f6b31b5ad750f1fe042a706a4e3d4',1,'main.cpp']]],
   ['main_2ecpp_1',['main.cpp',['../main_8cpp.html',1,'']]],
   ['mamen_2',['MAMEN',['../namespacecMHN_1_1TT.html#a4f5589747676407c031127496ca3f259',1,'cMHN::TT']]],
   ['mamen_2ehpp_3',['mamen.hpp',['../mamen_8hpp.html',1,'']]],

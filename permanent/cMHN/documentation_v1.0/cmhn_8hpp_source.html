@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cMHN<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">cMHN<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">C++ library for learning MHNs with pRC</div>
   </td>
@@ -78,8 +78,20 @@ $(function() {
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">#include &lt;<a class="code" href="tt_8hpp.html">cmhn/tt.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">#include &lt;<a class="code" href="utility_8hpp.html">cmhn/utility.hpp</a>&gt;</span></div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_H</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#if defined(EVENTS)</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#if EVENTS &lt; 25</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#include &lt;<a class="code" href="externs__nonTT_8hpp.html">externs_nonTT.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">#if defined(EVENTS) &amp;&amp; defined(MAXRANKP) &amp;&amp; defined(MAXRANKQ)</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">#include &lt;<a class="code" href="externs__TT_8hpp.html">externs_TT.hpp</a>&gt;</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_H</span></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div></div>
+<div class="ttc" id="aexterns__TT_8hpp_html"><div class="ttname"><a href="externs__TT_8hpp.html">externs_TT.hpp</a></div></div>
+<div class="ttc" id="aexterns__nonTT_8hpp_html"><div class="ttname"><a href="externs__nonTT_8hpp.html">externs_nonTT.hpp</a></div></div>
 <div class="ttc" id="anontt_8hpp_html"><div class="ttname"><a href="nontt_8hpp.html">nontt.hpp</a></div></div>
 <div class="ttc" id="att_8hpp_html"><div class="ttname"><a href="tt_8hpp.html">tt.hpp</a></div></div>
 <div class="ttc" id="autility_8hpp_html"><div class="ttname"><a href="utility_8hpp.html">utility.hpp</a></div></div>

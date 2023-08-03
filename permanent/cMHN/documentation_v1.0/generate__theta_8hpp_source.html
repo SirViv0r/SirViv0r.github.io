@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cMHN<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">cMHN<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">C++ library for learning MHNs with pRC</div>
   </td>
@@ -81,9 +81,9 @@ $(function() {
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>{</div>
 <div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">template</span>&lt;pRC::Size D, <span class="keyword">class</span> T = pRC::Float&lt;&gt;&gt;</div>
 <div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacecMHN.html#a75b3c7ec338ce01ba4cbbafbadc20e4f">   33</a></span>    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#a75b3c7ec338ce01ba4cbbafbadc20e4f">generateTheta</a>(pRC::RandomEngine &amp;rng,</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        pRC::Float&lt;&gt; <span class="keyword">const</span> &amp;fullness = 0.5, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalMean = -2,</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalStd = 2, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalMean = 0,</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalB = 0.75)</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        pRC::Float&lt;&gt; <span class="keyword">const</span> &amp;fullness = 0.5, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalMean = -2,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalStd = 2, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalMean = 0,</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalB = 0.75)</div>
 <div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    {</div>
 <div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>        <span class="comment">// diagonal</span></div>
 <div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>        pRC::GaussianDistribution&lt;T&gt; diagonalDist(diagonalMean, diagonalStd);</div>
@@ -120,8 +120,8 @@ $(function() {
 <div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span> </div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">template</span>&lt;pRC::Size D, <span class="keyword">class</span> T = pRC::Float&lt;&gt;&gt;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="namespacecMHN.html#afc7016a4b940582d06886f4068fa37e4">   96</a></span>    <span class="keyword">static</span> <span class="keyword">inline</span> <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#a75b3c7ec338ce01ba4cbbafbadc20e4f">generateTheta</a>(pRC::Float&lt;&gt; <span class="keyword">const</span> &amp;fullness = 0.5,</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalMean = -2, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalStd = 2,</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalMean = 0, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalB = 0.75)</div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalMean = -2, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;diagonalStd = 2,</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalMean = 0, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;offDiagonalB = 0.75)</div>
 <div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    {</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>        <span class="comment">// rng setup</span></div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>        pRC::SeedSequence seq(8, 16);</div>
@@ -133,8 +133,8 @@ $(function() {
 <div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>}</div>
 <div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span> </div>
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_UTILITY_GENERATE_THETA_H</span></div>
-<div class="ttc" id="aCalculatePThetaTests_8cpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:8</div></div>
 <div class="ttc" id="aCalculatePThetaTests_8cpp_html_ac8699f565c9ae7a044f146546b826e23"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a></div><div class="ttdeci">pRC::Size const D</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:9</div></div>
+<div class="ttc" id="aexterns__nonTT_8hpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> externs_nonTT.hpp:1</div></div>
 <div class="ttc" id="anamespacecMHN_html"><div class="ttname"><a href="namespacecMHN.html">cMHN</a></div><div class="ttdef"><b>Definition:</b> calculate_pTheta.hpp:15</div></div>
 <div class="ttc" id="anamespacecMHN_html_a75b3c7ec338ce01ba4cbbafbadc20e4f"><div class="ttname"><a href="namespacecMHN.html#a75b3c7ec338ce01ba4cbbafbadc20e4f">cMHN::generateTheta</a></div><div class="ttdeci">static auto generateTheta(pRC::RandomEngine &amp;rng, pRC::Float&lt;&gt; const &amp;fullness=0.5, T const &amp;diagonalMean=-2, T const &amp;diagonalStd=2, T const &amp;offDiagonalMean=0, T const &amp;offDiagonalB=0.75)</div><div class="ttdoc">Generates a random theta matrix according to given distributions, and with given fullness.</div><div class="ttdef"><b>Definition:</b> generate_theta.hpp:33</div></div>
 </div><!-- fragment --></div><!-- contents -->

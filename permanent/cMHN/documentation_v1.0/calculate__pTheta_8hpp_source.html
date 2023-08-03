@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cMHN<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">cMHN<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">C++ library for learning MHNs with pRC</div>
   </td>
@@ -85,69 +85,98 @@ $(function() {
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span> </div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno"><a class="line" href="namespacecMHN.html">   14</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="namespacecMHN.html">cMHN</a></div>
 <div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>{</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, pRC::Size D&gt;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno"><a class="line" href="namespacecMHN.html#a095c1fb1ff52e58457a1475ff65c3f36">   31</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#a095c1fb1ff52e58457a1475ff65c3f36">calculatePTheta</a>(</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>        <a class="code hl_class" href="classcMHN_1_1nonTT_1_1MHNOperator.html">nonTT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>    {</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <span class="keyword">auto</span> <span class="keyword">const</span> p0 =</div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>            eval(expand(pRC::makeConstantSequence&lt;pRC::Size, D, 2&gt;(),</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>                [](<span class="keyword">auto</span> <span class="keyword">const</span>... Ns)</div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>                {</div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>                    <span class="keywordflow">return</span> pRC::Tensor&lt;T, Ns...&gt;::Single(pRC::identity&lt;T&gt;(),</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                        pRC::Subscripts&lt;Ns...&gt;(0));</div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                }));</div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>        <span class="comment">// start from a random Tensor with norm 1 (determined by fair dice roll)</span></div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>        pRC::SeedSequence seq(8, 16);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>        pRC::RandomEngine rng(seq);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        pRC::GaussianDistribution&lt;pRC::Float&lt;&gt;&gt; dist;</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>        <span class="keyword">auto</span> pInit = eval(expand(pRC::makeConstantSequence&lt;pRC::Size, D, 2&gt;(),</div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>            [&amp;rng, &amp;dist](<span class="keyword">auto</span> <span class="keyword">const</span>... Ns)</div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>            {</div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>                <span class="keywordflow">return</span> pRC::random&lt;pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, Ns...&gt;&gt;(rng, dist);</div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>            }));</div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>        pInit = pInit / norm(pInit);</div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span> </div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>        <span class="keyword">auto</span> pTheta = pRC::solve&lt;pRC::Solver::GMRES&lt;128, 8&gt;&gt;(op, p0, pInit,</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            toleranceSolver);</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>        pTheta /= pRC::norm&lt;1&gt;(pTheta)();</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>        <span class="keywordflow">return</span> pTheta;</div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span>    }</div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    <span class="keyword">template</span>&lt;pRC::Size R, <span class="keyword">class</span> T, pRC::Size D&gt;</div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno"><a class="line" href="namespacecMHN.html#ab26d05873c50a4cb5c0139c0b43238a8">   77</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#a095c1fb1ff52e58457a1475ff65c3f36">calculatePTheta</a>(</div>
-<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>        <a class="code hl_class" href="classcMHN_1_1TT_1_1MHNOperator.html">TT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
-<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>    {</div>
-<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        <span class="keyword">using </span>ModeSizes = <span class="keyword">decltype</span>(TT::getModeSizes&lt;D&gt;());</div>
-<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>        </div>
-<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keyword">auto</span> <span class="keyword">const</span> p0 = expand(pRC::makeConstantSequence&lt;pRC::Index, D, 0&gt;(),</div>
-<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
-<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>            {</div>
-<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span>                <span class="keywordflow">return</span> pRC::TensorTrain::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ModeSizes,</div>
-<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>                    <span class="keyword">decltype</span>(pRC::Sizes(pRC::makeConstantSequence&lt;pRC::Size,</div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>                        <a class="code hl_variable" href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> - 1, 1&gt;()))&gt;::Single(pRC::identity&lt;T&gt;(), seq...);</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>            });</div>
-<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
-<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>        <span class="keyword">auto</span> pTheta = TT::ALS&lt;R&gt;(op, p0, toleranceSolver);</div>
-<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>        pTheta /= scalarProduct(pTheta,</div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>            pRC::unit&lt;pRC::TensorTrain::Tensor&lt;T, ModeSizes&gt;&gt;())();</div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>        <span class="keywordflow">return</span> pTheta;</div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    }</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>}</div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_COMMON_CALCULATE_PTHETA_H</span></div>
-<div class="ttc" id="aCalculatePThetaTests_8cpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:8</div></div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, <span class="keyword">class</span> X, pRC::Size D&gt;</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno"><a class="line" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">   33</a></span>    X <a class="code hl_function" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">calculatePTheta</a>(</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>        <a class="code hl_class" href="classcMHN_1_1nonTT_1_1MHNOperator.html">nonTT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, X <span class="keyword">const</span> &amp;pInit,</div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    {</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>        <span class="keyword">auto</span> <span class="keyword">const</span> p0 =</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>            eval(expand(pRC::makeConstantSequence&lt;pRC::Size, D, 2&gt;(),</div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span>                [](<span class="keyword">auto</span> <span class="keyword">const</span>... Ns)</div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>                {</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>                    <span class="keywordflow">return</span> pRC::Tensor&lt;T, Ns...&gt;::Single(pRC::identity&lt;T&gt;(),</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>                        pRC::Subscripts&lt;Ns...&gt;(0));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>                }));</div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>        <span class="keyword">auto</span> pTheta = pRC::solve&lt;pRC::Solver::GMRES&lt;&gt;&gt;(op, p0, pInit,</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>            toleranceSolver);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>        pTheta /= pRC::norm&lt;1&gt;(pTheta)();</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>        <span class="keywordflow">return</span> pTheta;</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    }</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>    </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keyword">template</span>&lt;<span class="keyword">class</span> T, pRC::Size D&gt;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno"><a class="line" href="namespacecMHN.html#a095c1fb1ff52e58457a1475ff65c3f36">   68</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">calculatePTheta</a>(</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span>        <a class="code hl_class" href="classcMHN_1_1nonTT_1_1MHNOperator.html">nonTT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    {</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span>        <span class="comment">// use a random pInit</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        pRC::SeedSequence seq(8, 16);</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>        pRC::RandomEngine rng(seq);</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>        pRC::GaussianDistribution&lt;pRC::Float&lt;&gt;&gt; dist;</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>        <span class="keyword">auto</span> pInit = eval(expand(pRC::makeConstantSequence&lt;pRC::Size, D, 2&gt;(),</div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>            [&amp;](<span class="keyword">auto</span> <span class="keyword">const</span>... Ns)</div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>            {</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                <span class="keywordflow">return</span> pRC::random&lt;pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, Ns...&gt;&gt;(rng, dist);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>            }));</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>        pInit /= norm&lt;1&gt;(pInit)();</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span>        <span class="keywordflow">return</span> <a class="code hl_function" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">calculatePTheta</a>(op, pInit, toleranceSolver);</div>
+<div class="line"><a id="l00083" name="l00083"></a><span class="lineno">   83</span>    }</div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span> </div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">template</span>&lt;pRC::Size R, <span class="keyword">class</span> T, <span class="keyword">class</span> X, pRC::Size D&gt;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno"><a class="line" href="namespacecMHN.html#a68e02dfa0f078e00be0c436985b89536">  103</a></span>    X <a class="code hl_function" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">calculatePTheta</a>(</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>        <a class="code hl_class" href="classcMHN_1_1TT_1_1MHNOperator.html">TT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, X <span class="keyword">const</span> &amp;pInit,</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    {</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>        <span class="keyword">using </span>ModeSizes = <span class="keyword">decltype</span>(TT::getModeSizes&lt;D&gt;());</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>        </div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">auto</span> <span class="keyword">const</span> p0 = expand(pRC::makeConstantSequence&lt;pRC::Index, D, 0&gt;(),</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">return</span> pRC::TensorTrain::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ModeSizes,</div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keyword">decltype</span>(pRC::Sizes(pRC::makeConstantSequence&lt;pRC::Size,</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        <a class="code hl_variable" href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a> - 1, 1&gt;()))&gt;::Single(pRC::identity&lt;T&gt;(), seq...);</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>            });</div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span> </div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>        <span class="keyword">auto</span> pTheta = TT::ALS&lt;R&gt;(op, p0, toleranceSolver, eval(pInit));</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        pTheta /= scalarProduct(pTheta,</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>            pRC::unit&lt;pRC::TensorTrain::Tensor&lt;T, ModeSizes&gt;&gt;())();</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>        <span class="keywordflow">return</span> pTheta;</div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    }</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span>    <span class="keyword">template</span>&lt;pRC::Size R, <span class="keyword">class</span> T, pRC::Size D&gt;</div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno"><a class="line" href="namespacecMHN.html#ab26d05873c50a4cb5c0139c0b43238a8">  141</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">calculatePTheta</a>(</div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span>        <a class="code hl_class" href="classcMHN_1_1TT_1_1MHNOperator.html">TT::MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;op, <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;toleranceSolver)</div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span>    {</div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span>        <span class="keyword">using </span>ModeSizes = <span class="keyword">decltype</span>(TT::getModeSizes&lt;D&gt;());</div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span>        <span class="keyword">using </span>Ranks = <span class="keyword">decltype</span>(TT::getRanks&lt;D,R&gt;());</div>
+<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
+<div class="line"><a id="l00147" name="l00147"></a><span class="lineno">  147</span>        <span class="comment">// use a random pInit</span></div>
+<div class="line"><a id="l00148" name="l00148"></a><span class="lineno">  148</span>        pRC::SeedSequence seq(8, 16);</div>
+<div class="line"><a id="l00149" name="l00149"></a><span class="lineno">  149</span>        pRC::RandomEngine rng(seq);</div>
+<div class="line"><a id="l00150" name="l00150"></a><span class="lineno">  150</span>        pRC::GaussianDistribution&lt;pRC::Float&lt;&gt;&gt; dist;</div>
+<div class="line"><a id="l00151" name="l00151"></a><span class="lineno">  151</span>        <span class="keyword">auto</span> pInit = round&lt;Ranks&gt;(</div>
+<div class="line"><a id="l00152" name="l00152"></a><span class="lineno">  152</span>            pRC::random&lt;pRC::TensorTrain::Tensor&lt;T, ModeSizes, Ranks&gt;&gt;</div>
+<div class="line"><a id="l00153" name="l00153"></a><span class="lineno">  153</span>            (rng, dist));</div>
+<div class="line"><a id="l00154" name="l00154"></a><span class="lineno">  154</span>        pInit /= scalarProduct(pInit,</div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span>            pRC::unit&lt;pRC::TensorTrain::Tensor&lt;T, ModeSizes&gt;&gt;())();</div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span> </div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span>        <span class="keywordflow">return</span> calculatePTheta&lt;R&gt;(op, pInit, toleranceSolver);</div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span>    }</div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span>}</div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_COMMON_CALCULATE_PTHETA_H</span></div>
 <div class="ttc" id="aCalculatePThetaTests_8cpp_html_ac8699f565c9ae7a044f146546b826e23"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a></div><div class="ttdeci">pRC::Size const D</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:9</div></div>
 <div class="ttc" id="aals_8hpp_html"><div class="ttname"><a href="als_8hpp.html">als.hpp</a></div></div>
 <div class="ttc" id="aclasscMHN_1_1TT_1_1MHNOperator_html"><div class="ttname"><a href="classcMHN_1_1TT_1_1MHNOperator.html">cMHN::TT::MHNOperator</a></div><div class="ttdoc">Class storing an MHN operator represented by a theta matrix (for TT calculations)</div><div class="ttdef"><b>Definition:</b> mhn_operator.hpp:23</div></div>
 <div class="ttc" id="aclasscMHN_1_1nonTT_1_1MHNOperator_html"><div class="ttname"><a href="classcMHN_1_1nonTT_1_1MHNOperator.html">cMHN::nonTT::MHNOperator</a></div><div class="ttdoc">Class storing an MHN operator represented by a theta matrix (for non TT calculations)</div><div class="ttdef"><b>Definition:</b> mhn_operator.hpp:23</div></div>
+<div class="ttc" id="aexterns__nonTT_8hpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> externs_nonTT.hpp:1</div></div>
 <div class="ttc" id="amamen_8hpp_html"><div class="ttname"><a href="mamen_8hpp.html">mamen.hpp</a></div></div>
 <div class="ttc" id="anamespacecMHN_html"><div class="ttname"><a href="namespacecMHN.html">cMHN</a></div><div class="ttdef"><b>Definition:</b> calculate_pTheta.hpp:15</div></div>
-<div class="ttc" id="anamespacecMHN_html_a095c1fb1ff52e58457a1475ff65c3f36"><div class="ttname"><a href="namespacecMHN.html#a095c1fb1ff52e58457a1475ff65c3f36">cMHN::calculatePTheta</a></div><div class="ttdeci">auto calculatePTheta(nonTT::MHNOperator&lt; T, D &gt; const &amp;op, T const &amp;toleranceSolver)</div><div class="ttdoc">Calculates the vector pTheta given a nonTT MHN Operator and a tolerance.</div><div class="ttdef"><b>Definition:</b> calculate_pTheta.hpp:31</div></div>
+<div class="ttc" id="anamespacecMHN_html_ae93b6f3c7c0f3795e5fc4085c0376b01"><div class="ttname"><a href="namespacecMHN.html#ae93b6f3c7c0f3795e5fc4085c0376b01">cMHN::calculatePTheta</a></div><div class="ttdeci">X calculatePTheta(nonTT::MHNOperator&lt; T, D &gt; const &amp;op, X const &amp;pInit, T const &amp;toleranceSolver)</div><div class="ttdoc">Calculates the vector pTheta given a nonTT MHN Operator and a tolerance.</div><div class="ttdef"><b>Definition:</b> calculate_pTheta.hpp:33</div></div>
 <div class="ttc" id="anontt_2mhn__operator_8hpp_html"><div class="ttname"><a href="nontt_2mhn__operator_8hpp.html">mhn_operator.hpp</a></div></div>
 <div class="ttc" id="att_2mhn__operator_8hpp_html"><div class="ttname"><a href="tt_2mhn__operator_8hpp.html">mhn_operator.hpp</a></div></div>
 <div class="ttc" id="att_2utility_8hpp_html"><div class="ttname"><a href="tt_2utility_8hpp.html">utility.hpp</a></div></div>

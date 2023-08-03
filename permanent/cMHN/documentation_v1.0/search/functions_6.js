@@ -4,5 +4,5 @@ var searchData=
   ['l2regulator_1',['L2Regulator',['../classcMHN_1_1L2Regulator.html#a1f93f40a64abe2d680aaca64f771a6f7',1,'cMHN::L2Regulator::L2Regulator(L2Regulator const &amp;)=default'],['../classcMHN_1_1L2Regulator.html#a1d86f3002aaa39d819ec34bebab090f4',1,'cMHN::L2Regulator::L2Regulator(L2Regulator &amp;&amp;)=default'],['../classcMHN_1_1L2Regulator.html#a792aa1a86902c09b7a1571933dcb9ecb',1,'cMHN::L2Regulator::L2Regulator(T const &amp;lambda)']]],
   ['lambda_2',['lambda',['../classcMHN_1_1Regulator.html#a2668dc1430185d3c2f08d329087a7eea',1,'cMHN::Regulator::lambda()'],['../classcMHN_1_1Regulator.html#a6de710b31c35581c272702ddd78846f1',1,'cMHN::Regulator::lambda() const']]],
   ['learnindependencemodel_3',['learnIndependenceModel',['../namespacecMHN.html#a9dc8f725c5d13c125f95098c062ed582',1,'cMHN']]],
-  ['learntheta_4',['learnTheta',['../namespacecMHN_1_1nonTT.html#a9bdf7d24e7e150abcaf4d505ca5956a5',1,'cMHN::nonTT::learnTheta()'],['../namespacecMHN_1_1TT.html#aef195589a7b2e3e1438cf6cfbfef6acf',1,'cMHN::TT::learnTheta()']]]
+  ['learntheta_4',['learnTheta',['../namespacecMHN_1_1nonTT.html#abdc687fdac08b516e75b66ed48630100',1,'cMHN::nonTT::learnTheta()'],['../namespacecMHN_1_1TT.html#a14a454adce3f6bb2c1a4b42f06c97aa2',1,'cMHN::TT::learnTheta()']]]
 ];

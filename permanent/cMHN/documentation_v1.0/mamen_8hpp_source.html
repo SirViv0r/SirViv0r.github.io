@@ -21,7 +21,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">cMHN<span id="projectnumber">&#160;0.2</span>
+   <div id="projectname">cMHN<span id="projectnumber">&#160;1.0</span>
    </div>
    <div id="projectbrief">C++ library for learning MHNs with pRC</div>
   </td>
@@ -84,9 +84,9 @@ $(function() {
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>{</div>
 <div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <span class="keyword">template</span>&lt;pRC::Size R,</div>
 <div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>        pRC::Operator::Transform OT = pRC::Operator::Transform::None,</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        pRC::Size <a class="code hl_variable" href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <span class="keyword">class </span><a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <span class="keyword">class </span>Tb&gt;</div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span>        pRC::Size <a class="code hl_variable" href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a>, <span class="keyword">class </span><a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, <span class="keyword">class </span>Tb&gt;</div>
 <div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="namespacecMHN_1_1TT.html#a4f5589747676407c031127496ca3f259">   16</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="namespacecMHN_1_1TT.html#a4f5589747676407c031127496ca3f259">MAMEN</a>(<a class="code hl_class" href="classcMHN_1_1TT_1_1MHNOperator.html">MHNOperator&lt;T, D&gt;</a> <span class="keyword">const</span> &amp;MHNop, Tb <span class="keyword">const</span> &amp;b,</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;tolerance)</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>        <a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a> <span class="keyword">const</span> &amp;tolerance)</div>
 <div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    {</div>
 <div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>        <span class="keyword">using </span>ModeSizes = <span class="keyword">decltype</span>(getModeSizes&lt;D&gt;());</div>
 <div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>        <span class="keyword">using </span>Ranks = <span class="keyword">decltype</span>(getRanks&lt;D, R&gt;());</div>
@@ -124,7 +124,7 @@ $(function() {
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>        <span class="keyword">auto</span> psiphiA = expand(pRC::makeSeries&lt;pRC::Index, D + 1&gt;(),</div>
 <div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
 <div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>            {</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), ERanks(), pRC::Sizes&lt;1&gt;())::size(</div>
 <div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>                        seq),</div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(),</div>
@@ -144,7 +144,7 @@ $(function() {
 <div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>        <span class="keyword">auto</span> psiphib = expand(pRC::makeSeries&lt;pRC::Index, D + 1&gt;(),</div>
 <div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
 <div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>            {</div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), ERanks(), pRC::Sizes&lt;1&gt;())::size(</div>
 <div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>                        seq),</div>
 <div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), BRanks(), pRC::Sizes&lt;1&gt;())::size(</div>
@@ -161,7 +161,7 @@ $(function() {
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>        <span class="keyword">auto</span> psiphihatA = expand(pRC::makeSeries&lt;pRC::Index, D + 1&gt;(),</div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
 <div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>            {</div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), ZRanks(), pRC::Sizes&lt;1&gt;())::size(</div>
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>                        seq),</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(),</div>
@@ -181,7 +181,7 @@ $(function() {
 <div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>        <span class="keyword">auto</span> psiphihatb = expand(pRC::makeSeries&lt;pRC::Index, D + 1&gt;(),</div>
 <div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>            [](<span class="keyword">auto</span> <span class="keyword">const</span>... seq)</div>
 <div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span>            {</div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span>                <span class="keywordflow">return</span> std::tuple(pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), ZRanks(), pRC::Sizes&lt;1&gt;())::size(</div>
 <div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>                        seq),</div>
 <div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>                    <span class="keyword">decltype</span>(pRC::Sizes&lt;1&gt;(), BRanks(), pRC::Sizes&lt;1&gt;())::size(</div>
@@ -302,20 +302,20 @@ $(function() {
 <div class="line"><a id="l00230" name="l00230"></a><span class="lineno">  230</span>                        eval(contract&lt;2, 1&gt;(sB, std::get&lt;k + 2&gt;(psiphihatb)))));</div>
 <div class="line"><a id="l00231" name="l00231"></a><span class="lineno">  231</span> </div>
 <div class="line"><a id="l00232" name="l00232"></a><span class="lineno">  232</span>                    <span class="comment">// solve local system</span></div>
-<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00233" name="l00233"></a><span class="lineno">  233</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span>                            <span class="keyword">decltype</span>(x.template core&lt;k&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span>                        2, 2,</div>
 <div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span>                            <span class="keyword">decltype</span>(x.template core&lt;k + 1&gt;())&gt;::size(2)&gt;</div>
 <div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span>                        sol;</div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    linearize(sol) = pRC::Solver::GMRES&lt;128, 8&gt;()(Ak, bk,</div>
+<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span>                    linearize(sol) = pRC::Solver::GMRES&lt;256, 0&gt;()(Ak, bk,</div>
 <div class="line"><a id="l00241" name="l00241"></a><span class="lineno">  241</span>                        linearize(sX), toleranceLocal);</div>
 <div class="line"><a id="l00242" name="l00242"></a><span class="lineno">  242</span> </div>
 <div class="line"><a id="l00243" name="l00243"></a><span class="lineno">  243</span>                    <span class="comment">// left orthogonalization</span></div>
 <div class="line"><a id="l00244" name="l00244"></a><span class="lineno">  244</span>                    <span class="keyword">auto</span> <span class="keyword">const</span> [u, s, v] = svd&lt;Ranks::size(k)&gt;(matricize(sol));</div>
 <div class="line"><a id="l00245" name="l00245"></a><span class="lineno">  245</span> </div>
-<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00246" name="l00246"></a><span class="lineno">  246</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00247" name="l00247"></a><span class="lineno">  247</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00248" name="l00248"></a><span class="lineno">  248</span>                            <span class="keyword">decltype</span>(x.template core&lt;k&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span>                        2, ERanks::size(k)&gt;</div>
@@ -347,7 +347,7 @@ $(function() {
 <div class="line"><a id="l00275" name="l00275"></a><span class="lineno">  275</span>                            linearize(zu * fromDiagonal(zs));</div>
 <div class="line"><a id="l00276" name="l00276"></a><span class="lineno">  276</span>                    }</div>
 <div class="line"><a id="l00277" name="l00277"></a><span class="lineno">  277</span> </div>
-<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span>                            <span class="keyword">decltype</span>(z.template core&lt;k&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span>                        2, 2,</div>
@@ -361,13 +361,13 @@ $(function() {
 <div class="line"><a id="l00289" name="l00289"></a><span class="lineno">  289</span> </div>
 <div class="line"><a id="l00290" name="l00290"></a><span class="lineno">  290</span>                    linearize(z.template core&lt;k&gt;()) = linearize(zu);</div>
 <div class="line"><a id="l00291" name="l00291"></a><span class="lineno">  291</span> </div>
-<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, Ranks::size(k), 2,</div>
+<div class="line"><a id="l00292" name="l00292"></a><span class="lineno">  292</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, Ranks::size(k), 2,</div>
 <div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span>                            <span class="keyword">decltype</span>(x.template core&lt;k + 1&gt;())&gt;::size(2)&gt;</div>
 <div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span>                        tNext;</div>
 <div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span>                    folding&lt;pRC::Position::Right&gt;(tNext) =</div>
 <div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span>                        fromDiagonal(s) * adjoint(v);</div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ERanks::size(k), 2,</div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ERanks::size(k), 2,</div>
 <div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00300" name="l00300"></a><span class="lineno">  300</span>                            <span class="keyword">decltype</span>(x.template core&lt;k + 1&gt;())&gt;::size(2)&gt;</div>
 <div class="line"><a id="l00301" name="l00301"></a><span class="lineno">  301</span>                        eNext;</div>
@@ -474,7 +474,7 @@ $(function() {
 <div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span>                        eval(contract&lt;2, 1&gt;(sB, std::get&lt;k + 1&gt;(psiphib)))));</div>
 <div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span> </div>
 <div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span>                    <span class="comment">// solve local system</span></div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span>                            <span class="keyword">decltype</span>(x.template core&lt;k - 1&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00408" name="l00408"></a><span class="lineno">  408</span>                        2, 2,</div>
@@ -488,7 +488,7 @@ $(function() {
 <div class="line"><a id="l00416" name="l00416"></a><span class="lineno">  416</span>                    <span class="keyword">auto</span> <span class="keyword">const</span> [u, s, v] =</div>
 <div class="line"><a id="l00417" name="l00417"></a><span class="lineno">  417</span>                        svd&lt;Ranks::size(k - 1)&gt;(matricize(sol));</div>
 <div class="line"><a id="l00418" name="l00418"></a><span class="lineno">  418</span> </div>
-<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ERanks::size(k - 1), 2,</div>
+<div class="line"><a id="l00419" name="l00419"></a><span class="lineno">  419</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>, ERanks::size(k - 1), 2,</div>
 <div class="line"><a id="l00420" name="l00420"></a><span class="lineno">  420</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00421" name="l00421"></a><span class="lineno">  421</span>                            <span class="keyword">decltype</span>(x.template core&lt;k&gt;())&gt;::size(2)&gt;</div>
 <div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span>                        ex;</div>
@@ -519,7 +519,7 @@ $(function() {
 <div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span>                            linearize(fromDiagonal(zs) * adjoint(zv));</div>
 <div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span>                    }</div>
 <div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span> </div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span>                            <span class="keyword">decltype</span>(z.template core&lt;k - 1&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span>                        2, 2,</div>
@@ -533,13 +533,13 @@ $(function() {
 <div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span> </div>
 <div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span>                    linearize(z.template core&lt;k&gt;()) = linearize(adjoint(zv));</div>
 <div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span> </div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span>                            <span class="keyword">decltype</span>(x.template core&lt;k - 1&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span>                        2, Ranks::size(k - 1)&gt;</div>
 <div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span>                        tNext;</div>
 <div class="line"><a id="l00469" name="l00469"></a><span class="lineno">  469</span>                    folding&lt;pRC::Position::Left&gt;(tNext) = u * fromDiagonal(s);</div>
-<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
+<div class="line"><a id="l00470" name="l00470"></a><span class="lineno">  470</span>                    pRC::Tensor&lt;<a class="code hl_typedef" href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a>,</div>
 <div class="line"><a id="l00471" name="l00471"></a><span class="lineno">  471</span>                        pRC::RemoveConstReference&lt;</div>
 <div class="line"><a id="l00472" name="l00472"></a><span class="lineno">  472</span>                            <span class="keyword">decltype</span>(x.template core&lt;k - 1&gt;())&gt;::size(0),</div>
 <div class="line"><a id="l00473" name="l00473"></a><span class="lineno">  473</span>                        2, ERanks::size(k - 1)&gt;</div>
@@ -592,9 +592,9 @@ $(function() {
 <div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span>}</div>
 <div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
 <div class="line"><a id="l00522" name="l00522"></a><span class="lineno">  522</span><span class="preprocessor">#endif </span><span class="comment">// cMHN_TT_MAMEN_H</span></div>
-<div class="ttc" id="aCalculatePThetaTests_8cpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:8</div></div>
 <div class="ttc" id="aCalculatePThetaTests_8cpp_html_ac8699f565c9ae7a044f146546b826e23"><div class="ttname"><a href="CalculatePThetaTests_8cpp.html#ac8699f565c9ae7a044f146546b826e23">D</a></div><div class="ttdeci">pRC::Size const D</div><div class="ttdef"><b>Definition:</b> CalculatePThetaTests.cpp:9</div></div>
 <div class="ttc" id="aclasscMHN_1_1TT_1_1MHNOperator_html"><div class="ttname"><a href="classcMHN_1_1TT_1_1MHNOperator.html">cMHN::TT::MHNOperator</a></div><div class="ttdoc">Class storing an MHN operator represented by a theta matrix (for TT calculations)</div><div class="ttdef"><b>Definition:</b> mhn_operator.hpp:23</div></div>
+<div class="ttc" id="aexterns__nonTT_8hpp_html_abc0bb55de8e9d0298ab31c7b624b5f7f"><div class="ttname"><a href="externs__nonTT_8hpp.html#abc0bb55de8e9d0298ab31c7b624b5f7f">T</a></div><div class="ttdeci">pRC::Float&lt;&gt; T</div><div class="ttdef"><b>Definition:</b> externs_nonTT.hpp:1</div></div>
 <div class="ttc" id="anamespacecMHN_1_1TT_html"><div class="ttname"><a href="namespacecMHN_1_1TT.html">cMHN::TT</a></div><div class="ttdef"><b>Definition:</b> als.hpp:12</div></div>
 <div class="ttc" id="anamespacecMHN_1_1TT_html_a4f5589747676407c031127496ca3f259"><div class="ttname"><a href="namespacecMHN_1_1TT.html#a4f5589747676407c031127496ca3f259">cMHN::TT::MAMEN</a></div><div class="ttdeci">auto MAMEN(MHNOperator&lt; T, D &gt; const &amp;MHNop, Tb const &amp;b, T const &amp;tolerance)</div><div class="ttdef"><b>Definition:</b> mamen.hpp:16</div></div>
 <div class="ttc" id="att_2mhn__operator_8hpp_html"><div class="ttname"><a href="tt_2mhn__operator_8hpp.html">mhn_operator.hpp</a></div></div>
